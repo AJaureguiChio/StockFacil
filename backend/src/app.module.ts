@@ -8,6 +8,8 @@ import { CatalogoModule } from './Catalogo/catalogo.module.js';
 import { ProductosModule } from './productos/productos.module.js';
 import { InventarioModule } from './inventario/inventario.module.js';
 import { VentasModule } from './ventas/ventas.module.js';
+import { AlertasModule } from './alertas/alertas.module.js';
+import { ReportesModule } from './reportes/reportes.module.js';
 
 @Module({
   imports: [
@@ -18,7 +20,9 @@ import { VentasModule } from './ventas/ventas.module.js';
     CatalogoModule,
     ProductosModule,
     InventarioModule,
-    VentasModule
+    VentasModule,
+    AlertasModule,
+    ReportesModule,
   ],
   controllers: [DebugController],
 })

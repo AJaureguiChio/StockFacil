@@ -3,6 +3,7 @@ import { DatabaseService } from '../database/database.service.js';
 import type { TenantCtx } from '../auth/auth.types.js';
 import { resolveRange, round2 } from '../common/dto.js';
 import { CreateVentaDto, ListVentasDto } from './ventas.dto.js';
+import { assertCantidad } from '../common/cantidad.js';
 
 @Injectable()
 export class VentasService {
@@ -17,7 +18,7 @@ export class VentasService {
         const ventaId = await this.db.tx(async (c) => {
             const ids = [...new Set(dto.items.map((i) => i.producto_id))];
             const { rows: prods } = await c.query(
-                `SELECT id, nombre, precio_venta, precio_costo, stock_actual
+                `SELECT id, nombre, precio_venta, precio_costo, stock_actual, permite_decimales
            FROM productos WHERE negocio_id = $1 AND activo AND id = ANY($2::bigint[]) FOR UPDATE`,
                 [t.negocioId, ids],
             );
@@ -25,6 +26,11 @@ export class VentasService {
             if (byId.size !== ids.length) throw new BadRequestException('Algún producto no existe o está inactivo');
 
             // Stock suficiente (sumando líneas repetidas del mismo producto)
+            for (const i of dto.items) {
+                const p = byId.get(i.producto_id)!;
+                assertCantidad(p.nombre, i.cantidad, p.permite_decimales);
+            }
+            
             const pedido = new Map<number, number>();
             for (const i of dto.items) pedido.set(i.producto_id, (pedido.get(i.producto_id) ?? 0) + i.cantidad);
             for (const [id, qty] of pedido) {

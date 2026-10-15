@@ -12,6 +12,7 @@ export class CreateProductoDto {
     @IsOptional() @IsNumber({ maxDecimalPlaces: 3 }) @Min(0) stock_minimo?: number;
     /** Existencias iniciales: se registran como un movimiento en el kardex. */
     @IsOptional() @IsNumber({ maxDecimalPlaces: 3 }) @Min(0) stock_inicial?: number;
+    @IsOptional() @IsBoolean() permite_decimales?: boolean;
 }
 
 /** El stock NO se edita aquí: solo cambia con movimientos o ventas. */
@@ -25,6 +26,7 @@ export class UpdateProductoDto {
     @IsOptional() @IsNumber({ maxDecimalPlaces: 2 }) @Min(0) precio_venta?: number;
     @IsOptional() @IsNumber({ maxDecimalPlaces: 3 }) @Min(0) stock_minimo?: number;
     @IsOptional() @IsBoolean() activo?: boolean;
+    @IsOptional() @IsBoolean() permite_decimales?: boolean;
 }
 
 export class ListProductosDto {

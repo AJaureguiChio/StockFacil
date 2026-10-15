@@ -3,11 +3,12 @@ import type { PoolClient } from 'pg';
 import { DatabaseService } from '../database/database.service.js';
 import type { TenantCtx } from '../auth/auth.types.js';
 import { CreateProductoDto, ListProductosDto, UpdateProductoDto } from './productos.dto.js';
+import { assertCantidad } from '../common/cantidad.js';
 
 // Lista blanca de columnas editables (evita construir SQL con nombres que vengan del cliente)
 const UPDATABLE = [
     'sku', 'nombre', 'descripcion', 'categoria_id', 'proveedor_id',
-    'precio_costo', 'precio_venta', 'stock_minimo', 'activo',
+    'precio_costo', 'precio_venta', 'stock_minimo', 'activo', 'permite_decimales',
 ] as const;
 
 @Injectable()
@@ -16,7 +17,7 @@ export class ProductosService {
 
     list(t: TenantCtx, f: ListProductosDto) {
         return this.db.query(
-            `SELECT p.id, p.sku, p.nombre, p.descripcion, p.precio_costo, p.precio_venta, p.stock_actual,
+            `SELECT p.id, p.sku, p.nombre, p.descripcion, p.permite_decimales, p.precio_costo, p.precio_venta, p.stock_actual,
               p.stock_minimo, p.activo, p.categoria_id, c.nombre AS categoria, p.proveedor_id,
               (p.stock_actual <= p.stock_minimo) AS stock_bajo
          FROM productos p LEFT JOIN categorias c ON c.id = p.categoria_id
@@ -53,12 +54,15 @@ export class ProductosService {
                 await this.assertOwned(c, 'categorias', dto.categoria_id, t.negocioId);
                 await this.assertOwned(c, 'proveedores', dto.proveedor_id, t.negocioId);
 
+                const permite = dto.permite_decimales ?? false;
+                assertCantidad(dto.nombre, dto.stock_minimo ?? 0, permite, 'El stock mínimo');
+                assertCantidad(dto.nombre, dto.stock_inicial ?? 0, permite, 'El stock inicial');
+
                 const { rows: [p] } = await c.query(
-                    `INSERT INTO productos (negocio_id, categoria_id, proveedor_id, sku, nombre, descripcion,
-                                  precio_costo, precio_venta, stock_minimo)
-           VALUES ($1,$2,$3,$4,$5,$6,COALESCE($7,0),$8,COALESCE($9,0)) RETURNING id`,
-                    [t.negocioId, dto.categoria_id ?? null, dto.proveedor_id ?? null, dto.sku, dto.nombre,
-                    dto.descripcion ?? null, dto.precio_costo ?? null, dto.precio_venta, dto.stock_minimo ?? null],
+                    `INSERT INTO productos (negocio_id, categoria_id, proveedor_id, sku, nombre, descripcion, precio_costo, precio_venta, stock_minimo, permite_decimales)
+         VALUES ($1,$2,$3,$4,$5,$6,COALESCE($7,0),$8,COALESCE($9,0),$10) RETURNING id`,
+                    [t.negocioId, dto.categoria_id ?? null, dto.proveedor_id ?? null, dto.sku, dto.nombre, dto.descripcion ?? null,
+                    dto.precio_costo ?? null, dto.precio_venta, dto.stock_minimo ?? null, permite],
                 );
                 if (dto.stock_inicial && dto.stock_inicial > 0) {
                     await c.query(
@@ -76,6 +80,16 @@ export class ProductosService {
         await this.db.tx(async (c) => {
             await this.assertOwned(c, 'categorias', dto.categoria_id, t.negocioId);
             await this.assertOwned(c, 'proveedores', dto.proveedor_id, t.negocioId);
+            const { rows: [cur] } = await c.query(
+                `SELECT nombre, stock_actual, stock_minimo, permite_decimales FROM productos WHERE id = $1 AND negocio_id = $2 FOR UPDATE`,
+                [id, t.negocioId],
+            );
+            if (!cur) throw new NotFoundException('Producto no encontrado');
+            const permite = dto.permite_decimales ?? cur.permite_decimales;
+            if (!permite) {
+                assertCantidad(cur.nombre, cur.stock_actual, false, 'El stock actual');
+                assertCantidad(cur.nombre, dto.stock_minimo ?? cur.stock_minimo, false, 'El stock mínimo');
+            }
 
             // Armamos el SET solo con los campos que llegaron
             const sets: string[] = [];

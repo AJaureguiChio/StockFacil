@@ -2,6 +2,7 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { DatabaseService } from '../database/database.service.js';
 import type { TenantCtx } from '../auth/auth.types.js';
 import { CreateMovimientoDto, ListMovimientosDto } from './inventario.dto.js';
+import { assertCantidad } from '../common/cantidad.js';
 
 @Injectable()
 export class InventarioService {
@@ -12,10 +13,11 @@ export class InventarioService {
         return this.db.tx(async (c) => {
             // FOR UPDATE: bloquea el producto mientras dura la transacción (evita carreras)
             const { rows: [p] } = await c.query(
-                `SELECT id FROM productos WHERE id = $1 AND negocio_id = $2 AND activo FOR UPDATE`,
+                `SELECT id, nombre, permite_decimales FROM productos WHERE id = $1 AND negocio_id = $2 AND activo FOR UPDATE`,
                 [dto.producto_id, t.negocioId],
             );
             if (!p) throw new NotFoundException('Producto no encontrado o inactivo');
+            assertCantidad(p.nombre, dto.cantidad, p.permite_decimales);
 
             if (dto.proveedor_id !== undefined) {
                 const { rows } = await c.query(`SELECT 1 FROM proveedores WHERE id = $1 AND negocio_id = $2`, [dto.proveedor_id, t.negocioId]);

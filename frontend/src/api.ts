@@ -79,7 +79,7 @@ export interface ProductoCrear {
     precio_venta: number;
     stock_minimo?: number;
     stock_inicial?: number;
-    permite_decimales: boolean;
+    permite_decimales?: boolean;
 }
 /** null en categoria_id / proveedor_id quita la categoría o el proveedor. */
 export interface ProductoEditar {
@@ -92,7 +92,7 @@ export interface ProductoEditar {
     precio_venta?: number;
     stock_minimo?: number;
     activo?: boolean;
-    permite_decimales: boolean;
+    permite_decimales?: boolean;
 }
 
 export type TipoManual = 'entrada_compra' | 'entrada_ajuste' | 'salida_ajuste' | 'salida_devolucion';

@@ -5,6 +5,8 @@ import Auth from './pages/Auth';
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
 import Inventario from './pages/Inventario';
+import Vender from './pages/Vender';
+import Ventas from './pages/Ventas';
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
         <Route index element={<Inicio />} />
         <Route path="productos" element={<Productos />} />
         <Route path="inventario" element={<Inventario />} />
+        <Route path="vender" element={<Vender />} />
+        <Route path="ventas" element={<Ventas />} />
         <Route path="*" element={<p>Página no encontrada.</p>} />
       </Route>
     </Routes>

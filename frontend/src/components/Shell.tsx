@@ -10,10 +10,11 @@ import { btn, errorBox } from '../ui';
 
 const NAV = [
     { to: '/', label: 'Inicio', end: true },
+    { to: '/vender', label: 'Vender', end: false },
+    { to: '/ventas', label: 'Ventas', end: false },
     { to: '/productos', label: 'Productos', end: false },
     { to: '/inventario', label: 'Inventario', end: false },
 ];
-
 function Gate() {
     const [me, setMe] = useState<Me | null>(null);
     const [error, setError] = useState('');

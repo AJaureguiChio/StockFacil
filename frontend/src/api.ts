@@ -150,6 +150,30 @@ export interface Venta extends VentaResumen {
     detalles: VentaLinea[];
 }
 
+export interface Resumen {
+    periodo: { desde: string; hasta: string };
+    num_ventas: number;
+    total_vendido: number;
+    ticket_promedio: number;
+    descuentos: number;
+    utilidad: number;
+    inventario: { productos_activos: number; productos_stock_bajo: number; valor_costo: number; valor_venta: number };
+}
+export interface VentasPeriodo { periodo: string; num_ventas: number; total_vendido: number }
+export interface TopProducto { producto_id: number; nombre: string; unidades: number; ingresos: number; utilidad: number }
+export interface Alerta {
+    id: number;
+    mensaje: string;
+    stock_al_generar: number;
+    leida: boolean;
+    creada_en: string;
+    producto_id: number;
+    producto: string;
+    stock_actual: number;
+    stock_minimo: number;
+}
+export interface Rango { desde?: string; hasta?: string }
+
 export interface FiltrosProductos { q?: string; activo?: boolean; stock_bajo?: boolean }
 
 const query = (params: Record<string, string | number | boolean | undefined>) => {
@@ -178,4 +202,10 @@ export const api = {
     ventas: (f: { desde?: string; hasta?: string; limit?: number; offset?: number } = {}) => request<VentaResumen[]>(`/ventas${query({ ...f })}`),
     venta: (id: number) => request<Venta>(`/ventas/${id}`),
     anularVenta: (id: number) => request<Venta>(`/ventas/${id}/anular`, { method: 'PATCH' }),
+    resumen: (r: Rango) => request<Resumen>(`/reportes/resumen${query({ ...r })}`),
+    reporteVentas: (r: Rango & { agrupar?: 'dia' | 'semana' | 'mes' }) => request<VentasPeriodo[]>(`/reportes/ventas${query({ ...r })}`),
+    productosTop: (r: Rango & { limit?: number }) => request<TopProducto[]>(`/reportes/productos-top${query({ ...r })}`),
+    alertas: () => request<Alerta[]>('/alertas'),
+    leerAlerta: (id: number) => request<{ id: number; leida: boolean }>(`/alertas/${id}/leer`, { method: 'PATCH' }),
+    leerTodasAlertas: () => request<{ marcadas: number }>('/alertas/leer-todas', { method: 'PATCH' }),
 };

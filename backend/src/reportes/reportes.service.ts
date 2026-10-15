@@ -15,7 +15,7 @@ export class ReportesService {
     ventas(t: TenantCtx, q: ReporteVentasDto) {
         const { desde, hasta } = resolveRange(q);
         return this.db.query(
-            `SELECT date_trunc($4::text, v.fecha AT TIME ZONE n.zona_horaria)::date AS periodo,
+            `SELECT to_char(date_trunc($4::text, v.fecha AT TIME ZONE n.zona_horaria), 'YYYY-MM-DD') AS periodo,
               COUNT(*) AS num_ventas, SUM(v.total) AS total_vendido
          FROM ventas v JOIN negocios n ON n.id = v.negocio_id
         WHERE v.negocio_id = $1 AND v.estado = 'completada'

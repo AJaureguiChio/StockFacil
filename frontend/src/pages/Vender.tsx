@@ -3,7 +3,7 @@ import type { FormEvent, KeyboardEvent } from 'react';
 import { api } from '../api';
 import type { MetodoPago, Producto } from '../api';
 import { useMe } from '../me-context';
-import { round2, round3 } from '../num';
+import { cantidadValida, minCantidad, round2, round3, stepCantidad } from '../num';
 import { btn, btnPrimary, card, errorBox, input, label } from '../ui';
 import { METODO_LABEL, METODOS } from '../ventas';
 
@@ -87,7 +87,9 @@ export default function Vender() {
     if (carrito.length === 0) problema = 'Agrega al menos un producto.';
     for (const l of carrito) {
         const c = Number(l.cantidad);
+        const dec = l.producto.permite_decimales;
         if (!(c > 0)) problema = `La cantidad de "${l.producto.nombre}" debe ser mayor que 0.`;
+        else if (!cantidadValida(c, dec)) problema = `"${l.producto.nombre}" solo se vende por unidades enteras.`;
         else if (c > l.producto.stock_actual) problema = `Solo hay ${l.producto.stock_actual} de "${l.producto.nombre}".`;
     }
     if (!problema && desc < 0) problema = 'El descuento no puede ser negativo.';
@@ -180,8 +182,8 @@ export default function Vender() {
                                         <input
                                             className={`${input} w-24`}
                                             type="number"
-                                            step="any"
-                                            min="0"
+                                            step={stepCantidad(l.producto.permite_decimales)}
+                                            min={minCantidad(l.producto.permite_decimales)}
                                             value={l.cantidad}
                                             onChange={(e) => cambiarCantidad(l.producto.id, e.target.value)}
                                             aria-label={`Cantidad de ${l.producto.nombre}`}

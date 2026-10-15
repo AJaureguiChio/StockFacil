@@ -28,6 +28,7 @@ export default function ProductoForm({ producto, categorias, proveedores, onCate
     const [precio, setPrecio] = useState(producto?.precio_venta?.toString() ?? '');
     const [minimo, setMinimo] = useState(producto?.stock_minimo?.toString() ?? '');
     const [inicial, setInicial] = useState('');
+    const [permiteDecimales, setPermiteDecimales] = useState(producto?.permite_decimales ?? false);
     const [nuevaCat, setNuevaCat] = useState<string | null>(null); // null = oculto
     const [error, setError] = useState('');
     const [guardando, setGuardando] = useState(false);
@@ -49,6 +50,21 @@ export default function ProductoForm({ producto, categorias, proveedores, onCate
         e.preventDefault();
         setGuardando(true);
         setError('');
+
+        if (!permiteDecimales) {
+            const fraccion = (v: string) => v.trim() !== '' && !Number.isInteger(Number(v));
+            if (fraccion(minimo) || fraccion(inicial)) {
+                setError('Sin decimales, el stock mínimo y el inicial deben ser números enteros.');
+                setGuardando(false);
+                return;
+            }
+            if (producto && !Number.isInteger(producto.stock_actual)) {
+                setError(`El stock actual (${producto.stock_actual}) tiene decimales: no puedes desactivar los decimales.`);
+                setGuardando(false);
+                return;
+            }
+        }
+
         try {
             if (producto) {
                 await api.editarProducto(producto.id, {
@@ -60,6 +76,7 @@ export default function ProductoForm({ producto, categorias, proveedores, onCate
                     precio_costo: num(costo) ?? 0,
                     precio_venta: Number(precio),
                     stock_minimo: num(minimo) ?? 0,
+                    permite_decimales: permiteDecimales,
                 });
             } else {
                 await api.crearProducto({
@@ -72,6 +89,7 @@ export default function ProductoForm({ producto, categorias, proveedores, onCate
                     precio_venta: Number(precio),
                     stock_minimo: num(minimo),
                     stock_inicial: num(inicial),
+                    permite_decimales: permiteDecimales,
                 });
             }
             onSaved();
@@ -134,6 +152,17 @@ export default function ProductoForm({ producto, categorias, proveedores, onCate
                     </div>
                 </div>
 
+                <label className="flex items-start gap-2 text-sm">
+                    <input type="checkbox" className="mt-1" checked={permiteDecimales}
+                        onChange={(e) => setPermiteDecimales(e.target.checked)} />
+                    <span>
+                        Se vende por peso o volumen (permite decimales)
+                        <span className="block text-xs text-muted-foreground">
+                            Márcalo para productos como queso, tela o aceite. Si no, solo se venderán unidades enteras.
+                        </span>
+                    </span>
+                </label>
+
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                     <div>
                         <label className={label}>Costo</label>
@@ -145,12 +174,12 @@ export default function ProductoForm({ producto, categorias, proveedores, onCate
                     </div>
                     <div>
                         <label className={label}>Stock mínimo</label>
-                        <input className={input} type="number" step="any" min="0" value={minimo} onChange={(e) => setMinimo(e.target.value)} />
+                        <input className={input} type="number" step={permiteDecimales ? '0.001' : '1'} min="0" value={minimo} onChange={(e) => setMinimo(e.target.value)} />
                     </div>
                     {!editando && (
                         <div>
                             <label className={label}>Stock inicial</label>
-                            <input className={input} type="number" step="any" min="0" value={inicial} onChange={(e) => setInicial(e.target.value)} />
+                            <input className={input} type="number" step={permiteDecimales ? '0.001' : '1'} min="0" value={inicial} onChange={(e) => setInicial(e.target.value)} />
                         </div>
                     )}
                 </div>

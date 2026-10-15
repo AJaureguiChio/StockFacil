@@ -6,6 +6,7 @@ import type { Movimiento, Producto, Proveedor, TipoManual } from '../api';
 import { useMe } from '../me-context';
 import { esEntrada, fmtFecha, TIPO_LABEL, TIPOS_MANUALES } from '../movimientos';
 import { btnPrimary, card, errorBox, input, label } from '../ui';
+import { cantidadValida, minCantidad, stepCantidad } from '../num';
 
 export default function Inventario() {
     const { me, money } = useMe();
@@ -62,6 +63,14 @@ export default function Inventario() {
             setError(`Solo hay ${producto.stock_actual} en stock de "${producto.nombre}".`);
             return;
         }
+        if (!cantidadValida(cant, producto.permite_decimales)) {
+            setError(
+                producto.permite_decimales
+                    ? 'La cantidad debe ser mayor que 0.'
+                    : `"${producto.nombre}" solo admite cantidades enteras.`,
+            );
+            return;
+        }
         setEnviando(true);
         try {
             const r = await api.registrarMovimiento({
@@ -112,7 +121,9 @@ export default function Inventario() {
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
                     <div>
                         <label className={label}>Cantidad *</label>
-                        <input className={input} type="number" step="any" min="0.001" value={cantidad}
+                        <input className={input} type="number"
+                            step={producto ? stepCantidad(producto.permite_decimales) : '1'}
+                            min={producto ? minCantidad(producto.permite_decimales) : '1'} value={cantidad}
                             onChange={(e) => setCantidad(e.target.value)} required />
                     </div>
                     {tipo === 'entrada_compra' && (

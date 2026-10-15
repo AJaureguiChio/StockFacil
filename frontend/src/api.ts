@@ -118,6 +118,35 @@ export interface MovimientoCrear {
 /** Estado del producto tras registrar un movimiento. */
 export interface ProductoStock { id: number; nombre: string; stock_actual: number; stock_minimo: number; stock_bajo: boolean }
 
+export type MetodoPago = 'efectivo' | 'tarjeta' | 'transferencia' | 'otro';
+export interface VentaItemCrear { producto_id: number; cantidad: number; precio_unitario?: number }
+export interface VentaCrear { items: VentaItemCrear[]; metodo_pago?: MetodoPago; descuento?: number; notas?: string }
+export interface VentaLinea {
+    id: number;
+    producto_id: number;
+    producto: string;
+    sku: string;
+    cantidad: number;
+    precio_unitario: number;
+    subtotal: number;
+}
+export interface VentaResumen {
+    id: number;
+    fecha: string;
+    metodo_pago: MetodoPago;
+    subtotal: number;
+    descuento: number;
+    total: number;
+    estado: 'completada' | 'anulada';
+    vendedor: string | null;
+}
+export interface Venta extends VentaResumen {
+    negocio_id: number;
+    usuario_id: number;
+    notas: string | null;
+    detalles: VentaLinea[];
+}
+
 export interface FiltrosProductos { q?: string; activo?: boolean; stock_bajo?: boolean }
 
 const query = (params: Record<string, string | number | boolean | undefined>) => {
@@ -142,4 +171,8 @@ export const api = {
     desactivarProducto: (id: number) => request<{ id: number; activo: boolean }>(`/productos/${id}`, { method: 'DELETE' }),
     movimientos: (f: { producto_id?: number; limit?: number } = {}) => request<Movimiento[]>(`/inventario/movimientos${query({ ...f })}`),
     registrarMovimiento: (m: MovimientoCrear) => request<ProductoStock>('/inventario/movimientos', post(m)),
+    vender: (v: VentaCrear) => request<Venta>('/ventas', post(v)),
+    ventas: (f: { desde?: string; hasta?: string; limit?: number; offset?: number } = {}) => request<VentaResumen[]>(`/ventas${query({ ...f })}`),
+    venta: (id: number) => request<Venta>(`/ventas/${id}`),
+    anularVenta: (id: number) => request<Venta>(`/ventas/${id}/anular`, { method: 'PATCH' }),
 };

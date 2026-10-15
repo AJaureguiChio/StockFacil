@@ -4,6 +4,7 @@ import Account from './pages/Account';
 import Auth from './pages/Auth';
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
+import Inventario from './pages/Inventario';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Route element={<Shell />}>
         <Route index element={<Inicio />} />
         <Route path="productos" element={<Productos />} />
+        <Route path="inventario" element={<Inventario />} />
         <Route path="*" element={<p>Página no encontrada.</p>} />
       </Route>
     </Routes>

@@ -11,6 +11,7 @@ import { btn, errorBox } from '../ui';
 const NAV = [
     { to: '/', label: 'Inicio', end: true },
     { to: '/productos', label: 'Productos', end: false },
+    { to: '/inventario', label: 'Inventario', end: false },
 ];
 
 function Gate() {

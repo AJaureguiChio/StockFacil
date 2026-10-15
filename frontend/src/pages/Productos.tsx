@@ -4,6 +4,7 @@ import type { Categoria, Producto, Proveedor } from '../api';
 import ProductoForm from '../components/ProductoForm';
 import { useMe } from '../me-context';
 import { btn, btnPrimary, card, errorBox, input } from '../ui';
+import { Link } from "react-router";
 
 type Estado = 'activos' | 'todos' | 'desactivados';
 type Editor = null | { producto?: Producto };
@@ -112,6 +113,7 @@ export default function Productos() {
                                     {p.stock_bajo && p.activo && <div className="text-xs font-normal">Stock bajo (mín. {p.stock_minimo})</div>}
                                 </td>
                                 <td className="space-x-2 p-3 text-right whitespace-nowrap">
+                                    {p.activo && <Link to={`/inventario?producto=${p.id}`} className={btn}>Movimiento</Link>}
                                     <button className={btn} onClick={() => setEditor({ producto: p })}>Editar</button>
                                     {p.activo ? (
                                         <button className={btn} onClick={() => desactivar(p)}>Desactivar</button>

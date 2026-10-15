@@ -8,6 +8,14 @@ import { CreateCategoriaDto, CreateProveedorDto } from './catalogo.dto.js';
 export class CatalogoController {
     constructor(private readonly db: DatabaseService) { }
 
+    @Get('categorias')
+    categorias(@Tenant() t: TenantCtx) {
+        return this.db.query(
+            `SELECT id, nombre FROM categorias WHERE negocio_id = $1 ORDER BY nombre`,
+            [t.negocioId],
+        );
+    }
+
     @Post('categorias')
     crearCategoria(@Tenant() t: TenantCtx, @Body() dto: CreateCategoriaDto) {
         return this.db.queryOne(

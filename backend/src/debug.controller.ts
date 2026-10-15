@@ -19,9 +19,4 @@ export class DebugController {
   whoami(@Auth() auth: AuthInfo) {
     return auth;
   }
-
-  @Get('Conexion')
-  conexion(){
-    return "Texto"
-  }
 }

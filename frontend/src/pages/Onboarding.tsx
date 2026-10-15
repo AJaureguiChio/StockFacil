@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { api } from '../api';
+import { btnPrimary, card, errorBox, input } from '../ui';
 
 export default function Onboarding({ onDone }: { onDone: () => void }) {
     const [nombre, setNombre] = useState('');
@@ -22,11 +23,11 @@ export default function Onboarding({ onDone }: { onDone: () => void }) {
     }
 
     return (
-        <form onSubmit={submit} className="mx-auto mt-16 max-w-md space-y-4 rounded-lg border p-6 shadow-sm">
+        <form onSubmit={submit} className={`${card} mx-auto mt-16 max-w-md space-y-4 p-6 shadow-sm`}>
             <h1 className="text-xl font-semibold">¡Bienvenido! Crea tu negocio</h1>
-            <p className="text-sm opacity-70">Con este nombre aparecerá tu tienda en la plataforma.</p>
+            <p className="text-sm text-muted-foreground">Con este nombre aparecerá tu tienda en la plataforma.</p>
             <input
-                className="w-full rounded border p-2"
+                className={input}
                 placeholder="Nombre de tu tienda"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
@@ -34,8 +35,8 @@ export default function Onboarding({ onDone }: { onDone: () => void }) {
                 minLength={2}
                 maxLength={150}
             />
-            {error && <p className="text-sm text-red-600">{error}</p>}
-            <button disabled={enviando} className="rounded bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 disabled:opacity-50">
+            {error && <p className={errorBox}>{error}</p>}
+            <button disabled={enviando} className={btnPrimary}>
                 {enviando ? 'Creando…' : 'Continuar'}
             </button>
         </form>

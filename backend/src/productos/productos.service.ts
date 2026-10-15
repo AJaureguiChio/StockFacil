@@ -42,7 +42,7 @@ export class ProductosService {
 
     /** Verifica que la categoría/proveedor pertenezca al mismo negocio. */
     private async assertOwned(c: PoolClient, tabla: 'categorias' | 'proveedores', id: number | undefined, negocioId: number) {
-        if (id === undefined) return;
+        if (id == null) return;
         const { rows } = await c.query(`SELECT 1 FROM ${tabla} WHERE id = $1 AND negocio_id = $2`, [id, negocioId]);
         if (!rows.length) throw new BadRequestException(tabla === 'categorias' ? 'Categoría inválida' : 'Proveedor inválido');
     }

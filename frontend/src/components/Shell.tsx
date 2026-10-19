@@ -7,6 +7,7 @@ import { MeContext } from '../me-context';
 import type { MeCtx } from '../me-context';
 import Onboarding from '../pages/Onboarding';
 import { btn, errorBox } from '../ui';
+import Footer from './Footer';
 
 const NAV = [
     { to: '/', label: 'Inicio', end: true },
@@ -43,12 +44,13 @@ function Gate() {
 
     return (
         <MeContext.Provider value={ctx}>
-            <div className="min-h-screen bg-background text-foreground">
-                <header className="flex items-center justify-between border-b border-border px-4 py-3">
-                    <span className="text-lg font-semibold">{me.negocio?.nombre}</span>
-                    <UserButton size="icon" />
+            <div className="flex min-h-screen flex-col bg-background text-foreground">
+                <header className="flex items-center gap-3 border-b border-border px-4 py-3">
+                    <NavLink to="/" className="shrink-0 text-lg font-bold tracking-tight">Stock Facil</NavLink>
+                    <span className="min-w-0 truncate text-sm text-muted-foreground">· {me.negocio?.nombre}</span>
+                    <div className="ml-auto"><UserButton size="icon" /></div>
                 </header>
-                <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 md:flex-row md:gap-8">
+                <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-4 px-4 py-6 md:flex-row md:gap-8">
                     <nav className="flex gap-1 overflow-x-auto md:w-44 md:shrink-0 md:flex-col">
                         {NAV.map((n) => (
                             <NavLink
@@ -65,6 +67,7 @@ function Gate() {
                     </nav>
                     <main className="min-w-0 flex-1"><Outlet /></main>
                 </div>
+                <Footer />
             </div>
         </MeContext.Provider>
     );

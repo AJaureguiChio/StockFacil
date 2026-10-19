@@ -17,6 +17,7 @@ function Panel() {
         <div className="min-h-screen">
             <header className="flex items-center justify-between border-b px-6 py-3">
                 <span className="text-lg font-semibold">{me?.negocio?.nombre ?? 'Inventario y Ventas'}</span>
+                <span className='text-lg font-bold'>Stock Facil</span>
                 <UserButton size="icon" />
             </header>
             <main className="mx-auto max-w-5xl p-6">
@@ -30,6 +31,9 @@ function Panel() {
                     </div>
                 )}
             </main>
+            <footer>
+                <small>Aplicación creada por Alberto Jairzinho Jáuregui Chio</small>
+            </footer>
         </div>
     );
 }

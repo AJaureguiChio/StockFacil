@@ -1,0 +1,9 @@
+export default function Footer() {
+    return (
+        <footer className="border-t border-border px-4 py-4 text-center text-xs text-muted-foreground">
+            <span className="font-medium text-foreground">Stock Facil</span>
+            {' · '}Autor: Alberto Jairzinho Jáuregui Chio
+            {' · '}© {new Date().getFullYear()}
+        </footer>
+    );
+}

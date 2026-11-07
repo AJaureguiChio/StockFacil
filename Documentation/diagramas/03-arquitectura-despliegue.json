@@ -1,0 +1,246 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "Arquitectura y despliegue de StockFácil",
+  "locale": "es",
+  "quality_profile": "showcase",
+  "legend": {
+   "mode": "hidden"
+  },
+  "output": "03-arquitectura-despliegue.html",
+  "repository": {
+   "url": "https://github.com/AJaureguiChio/StockFacil.git",
+   "revision": "57e25acd5774c591928de3bfd453eadd56548d53"
+  }
+ },
+ "components": [
+  {
+   "id": "spa",
+   "type": "frontend",
+   "label": "React (SPA)",
+   "sublabel": "Navegador · authClient",
+   "tag": "api.ts: Bearer JWT",
+   "pos": [
+    40,
+    70
+   ],
+   "size": [
+    160,
+    76
+   ],
+   "sources": [
+    {
+     "path": "frontend/src/api.ts",
+     "line": 17,
+     "end_line": 32
+    },
+    {
+     "path": "frontend/vercel.json",
+     "line": 1,
+     "end_line": 3
+    }
+   ]
+  },
+  {
+   "id": "guard",
+   "type": "security",
+   "label": "AuthGuard global",
+   "sublabel": "jose · jwtVerify",
+   "tag": "firma, exp, issuer",
+   "pos": [
+    330,
+    70
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/auth/auth.guard.ts",
+     "line": 34,
+     "end_line": 68
+    },
+    {
+     "path": "backend/src/auth/auth.module.ts",
+     "line": 5,
+     "end_line": 10
+    }
+   ]
+  },
+  {
+   "id": "svc",
+   "type": "backend",
+   "label": "API NestJS",
+   "sublabel": "Controladores y servicios",
+   "tag": "prefijo /api · pg Pool",
+   "pos": [
+    600,
+    70
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/main.ts",
+     "line": 6,
+     "end_line": 19
+    },
+    {
+     "path": "backend/src/database/database.service.ts",
+     "line": 15,
+     "end_line": 20
+    }
+   ]
+  },
+  {
+   "id": "auth",
+   "type": "security",
+   "label": "Neon Auth",
+   "sublabel": "Better Auth",
+   "tag": "/.well-known/jwks.json",
+   "pos": [
+    330,
+    290
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "frontend/src/neon.ts",
+     "line": 1,
+     "end_line": 3
+    },
+    {
+     "path": "backend/src/auth/auth.guard.ts",
+     "line": 23,
+     "end_line": 29
+    }
+   ]
+  },
+  {
+   "id": "pg",
+   "type": "database",
+   "label": "PostgreSQL",
+   "sublabel": "9 tablas · triggers",
+   "tag": "esquema neon_auth",
+   "pos": [
+    600,
+    290
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 29,
+     "end_line": 38
+    },
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 169,
+     "end_line": 171
+    }
+   ]
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "Vercel",
+   "wraps": [
+    "spa"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "Railway",
+   "wraps": [
+    "guard",
+    "svc"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "Neon",
+   "wraps": [
+    "auth",
+    "pg"
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "id": "c1",
+   "from": "spa",
+   "to": "auth",
+   "label": "1 · Login (SDK)",
+   "fromSide": "bottom",
+   "toSide": "left"
+  },
+  {
+   "id": "c2",
+   "from": "auth",
+   "to": "spa",
+   "label": "2 · JWT",
+   "variant": "emphasis",
+   "fromSide": "left",
+   "toSide": "bottom"
+  },
+  {
+   "id": "c3",
+   "from": "spa",
+   "to": "guard",
+   "label": "3 · Bearer JWT",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c4",
+   "from": "guard",
+   "to": "auth",
+   "label": "4 · Obtiene JWKS",
+   "variant": "security",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelAt": [
+    408,
+    235
+   ]
+  },
+  {
+   "id": "c5",
+   "from": "guard",
+   "to": "pg",
+   "label": "5 · Perfil",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c6",
+   "from": "guard",
+   "to": "svc",
+   "label": "6 · Tenant",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c7",
+   "from": "svc",
+   "to": "pg",
+   "label": "7 · SQL (DATABASE_URL)",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelAt": [
+    685,
+    235
+   ]
+  }
+ ]
+}

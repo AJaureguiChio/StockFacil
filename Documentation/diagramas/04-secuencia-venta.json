@@ -1,0 +1,211 @@
+{
+ "schema_version": 1,
+ "diagram_type": "sequence",
+ "meta": {
+  "title": "Secuencia de una venta",
+  "locale": "es",
+  "quality_profile": "showcase",
+  "legend": {
+   "mode": "hidden"
+  },
+  "output": "04-secuencia-venta.html",
+  "repository": {
+   "url": "https://github.com/AJaureguiChio/StockFacil.git",
+   "revision": "57e25acd5774c591928de3bfd453eadd56548d53"
+  }
+ },
+ "participants": [
+  {
+   "id": "web",
+   "type": "frontend",
+   "label": "Pantalla Vender",
+   "sublabel": "/vender (React)",
+   "sources": [
+    {
+     "path": "frontend/src/pages/Vender.tsx",
+     "line": 98,
+     "end_line": 121
+    }
+   ]
+  },
+  {
+   "id": "api",
+   "type": "backend",
+   "label": "API NestJS",
+   "sublabel": "VentasService",
+   "sources": [
+    {
+     "path": "backend/src/ventas/ventas.service.ts",
+     "line": 17,
+     "end_line": 71
+    },
+    {
+     "path": "backend/src/auth/auth.guard.ts",
+     "line": 34,
+     "end_line": 68
+    }
+   ]
+  },
+  {
+   "id": "db",
+   "type": "database",
+   "label": "PostgreSQL",
+   "sublabel": "tablas",
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 82,
+     "end_line": 104
+    }
+   ]
+  },
+  {
+   "id": "trg",
+   "type": "database",
+   "label": "Triggers",
+   "sublabel": "kardex y stock",
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 144,
+     "end_line": 188
+    }
+   ]
+  }
+ ],
+ "segments": [
+  {
+   "from": 268,
+   "to": 690,
+   "label": "Transacción db.tx()"
+  }
+ ],
+ "messages": [
+  {
+   "from": "web",
+   "to": "api",
+   "y": 170,
+   "label": "POST /api/ventas + Bearer JWT",
+   "variant": "emphasis"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 204,
+   "label": "Guard: SELECT usuarios",
+   "variant": "default"
+  },
+  {
+   "from": "db",
+   "to": "api",
+   "y": 238,
+   "label": "negocio_id del perfil",
+   "variant": "return"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 298,
+   "label": "BEGIN",
+   "variant": "default"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 332,
+   "label": "SELECT productos FOR UPDATE",
+   "variant": "default"
+  },
+  {
+   "from": "db",
+   "to": "api",
+   "y": 366,
+   "label": "Filas bloqueadas",
+   "variant": "return"
+  },
+  {
+   "from": "api",
+   "to": "web",
+   "y": 400,
+   "label": "Si falla: ROLLBACK, 400/409",
+   "variant": "dashed"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 434,
+   "label": "INSERT ventas",
+   "variant": "emphasis"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 468,
+   "label": "INSERT venta_detalles (por línea)",
+   "variant": "emphasis"
+  },
+  {
+   "from": "db",
+   "to": "trg",
+   "y": 502,
+   "label": "trg_salida_por_venta",
+   "variant": "default"
+  },
+  {
+   "from": "trg",
+   "to": "db",
+   "y": 536,
+   "label": "INSERT movimiento salida_venta",
+   "variant": "default"
+  },
+  {
+   "from": "db",
+   "to": "trg",
+   "y": 570,
+   "label": "trg_aplicar_movimiento",
+   "variant": "default"
+  },
+  {
+   "from": "trg",
+   "to": "db",
+   "y": 604,
+   "label": "UPDATE productos.stock_actual",
+   "variant": "default"
+  },
+  {
+   "from": "trg",
+   "to": "db",
+   "y": 638,
+   "label": "Si stock ≤ mínimo: INSERT alertas",
+   "variant": "security"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 672,
+   "label": "COMMIT",
+   "variant": "default"
+  },
+  {
+   "from": "api",
+   "to": "db",
+   "y": 718,
+   "label": "findOne: venta + detalles",
+   "variant": "default"
+  },
+  {
+   "from": "api",
+   "to": "web",
+   "y": 752,
+   "label": "201 Venta (JSON)",
+   "variant": "return"
+  },
+  {
+   "from": "web",
+   "to": "api",
+   "y": 786,
+   "label": "Recarga: GET /api/productos",
+   "variant": "default"
+  }
+ ]
+}

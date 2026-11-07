@@ -1,0 +1,432 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "Arquitectura de la aplicación StockFácil",
+  "locale": "es",
+  "quality_profile": "showcase",
+  "legend": {
+   "mode": "hidden"
+  },
+  "output": "07-arquitectura-aplicacion.html",
+  "repository": {
+   "url": "https://github.com/AJaureguiChio/StockFacil.git",
+   "revision": "57e25acd5774c591928de3bfd453eadd56548d53"
+  }
+ },
+ "components": [
+  {
+   "id": "pages",
+   "type": "frontend",
+   "label": "Pantallas React",
+   "sublabel": "App.tsx · Shell",
+   "tag": "Inicio, Vender, Ventas…",
+   "pos": [
+    40,
+    70
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "frontend/src/App.tsx",
+     "line": 28,
+     "end_line": 44
+    }
+   ]
+  },
+  {
+   "id": "api",
+   "type": "frontend",
+   "label": "Cliente API",
+   "sublabel": "api.ts",
+   "tag": "fetch con Bearer JWT",
+   "pos": [
+    40,
+    200
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "frontend/src/api.ts",
+     "line": 17,
+     "end_line": 32
+    }
+   ]
+  },
+  {
+   "id": "sdk",
+   "type": "frontend",
+   "label": "Cliente de sesión",
+   "sublabel": "neon.ts · authClient",
+   "tag": "auth-ui",
+   "pos": [
+    40,
+    330
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "frontend/src/neon.ts",
+     "line": 1,
+     "end_line": 2
+    }
+   ]
+  },
+  {
+   "id": "guard",
+   "type": "security",
+   "label": "AuthGuard global",
+   "sublabel": "jose · jwtVerify",
+   "tag": "JWT → tenant",
+   "pos": [
+    330,
+    200
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/auth/auth.guard.ts",
+     "line": 34,
+     "end_line": 68
+    },
+    {
+     "path": "backend/src/auth/auth.module.ts",
+     "line": 1,
+     "end_line": 9
+    }
+   ]
+  },
+  {
+   "id": "m1",
+   "type": "backend",
+   "label": "Negocio y catálogo",
+   "sublabel": "/me, /onboarding",
+   "tag": "/categorias, /proveedores",
+   "pos": [
+    560,
+    60
+   ],
+   "size": [
+    210,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/negocio/negocio.controller.ts",
+     "line": 7,
+     "end_line": 20
+    },
+    {
+     "path": "backend/src/Catalogo/catalogo.controller.ts",
+     "line": 7,
+     "end_line": 42
+    }
+   ]
+  },
+  {
+   "id": "m2",
+   "type": "backend",
+   "label": "Productos e inventario",
+   "sublabel": "/productos",
+   "tag": "/inventario/movimientos",
+   "pos": [
+    560,
+    150
+   ],
+   "size": [
+    210,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/productos/productos.controller.ts",
+     "line": 7,
+     "end_line": 15
+    },
+    {
+     "path": "backend/src/inventario/inventario.controller.ts",
+     "line": 7,
+     "end_line": 19
+    }
+   ]
+  },
+  {
+   "id": "m3",
+   "type": "backend",
+   "label": "Ventas",
+   "sublabel": "/ventas",
+   "tag": "transacción con db.tx",
+   "pos": [
+    560,
+    240
+   ],
+   "size": [
+    210,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/ventas/ventas.controller.ts",
+     "line": 7,
+     "end_line": 28
+    }
+   ]
+  },
+  {
+   "id": "m4",
+   "type": "backend",
+   "label": "Alertas y reportes",
+   "sublabel": "/alertas",
+   "tag": "/reportes/*",
+   "pos": [
+    560,
+    330
+   ],
+   "size": [
+    210,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/alertas/alertas.controller.ts",
+     "line": 7,
+     "end_line": 42
+    },
+    {
+     "path": "backend/src/reportes/reportes.controller.ts",
+     "line": 8,
+     "end_line": 30
+    }
+   ]
+  },
+  {
+   "id": "db",
+   "type": "backend",
+   "label": "DatabaseService",
+   "sublabel": "pg Pool · tx()",
+   "tag": "DATABASE_URL",
+   "pos": [
+    830,
+    195
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/database/database.service.ts",
+     "line": 12,
+     "end_line": 48
+    }
+   ]
+  },
+  {
+   "id": "auth",
+   "type": "security",
+   "label": "Neon Auth",
+   "sublabel": "Sesión y JWT",
+   "tag": "/.well-known/jwks.json",
+   "pos": [
+    320,
+    490
+   ],
+   "size": [
+    190,
+    76
+   ],
+   "sources": [
+    {
+     "path": "backend/src/auth/auth.guard.ts",
+     "line": 23,
+     "end_line": 29
+    }
+   ]
+  },
+  {
+   "id": "pg",
+   "type": "database",
+   "label": "PostgreSQL",
+   "sublabel": "9 tablas · triggers",
+   "tag": "kardex, stock, alertas",
+   "pos": [
+    830,
+    490
+   ],
+   "size": [
+    170,
+    76
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 144,
+     "end_line": 190
+    }
+   ]
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "Frontend · Vercel",
+   "wraps": [
+    "pages",
+    "api",
+    "sdk"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "Backend · NestJS en Railway",
+   "wraps": [
+    "guard",
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "db"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "Neon",
+   "wraps": [
+    "auth",
+    "pg"
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "id": "c1",
+   "from": "pages",
+   "to": "api",
+   "label": "Datos"
+  },
+  {
+   "id": "c2",
+   "from": "pages",
+   "to": "sdk",
+   "label": "Login",
+   "fromSide": "left",
+   "toSide": "left"
+  },
+  {
+   "id": "c3",
+   "from": "api",
+   "to": "sdk",
+   "label": "Token"
+  },
+  {
+   "id": "c4",
+   "from": "api",
+   "to": "guard",
+   "label": "HTTPS /api",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c5",
+   "from": "sdk",
+   "to": "auth",
+   "label": "Sesión y JWT",
+   "variant": "security",
+   "fromSide": "bottom",
+   "toSide": "left"
+  },
+  {
+   "id": "c6",
+   "from": "guard",
+   "to": "auth",
+   "label": "JWKS",
+   "variant": "security",
+   "fromSide": "bottom",
+   "toSide": "top"
+  },
+  {
+   "id": "c7",
+   "from": "guard",
+   "to": "m1",
+   "label": "tenant",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c8",
+   "from": "guard",
+   "to": "m2",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c9",
+   "from": "guard",
+   "to": "m3",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c10",
+   "from": "guard",
+   "to": "m4",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c11",
+   "from": "m1",
+   "to": "db",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c12",
+   "from": "m2",
+   "to": "db",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c13",
+   "from": "m3",
+   "to": "db",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c14",
+   "from": "m4",
+   "to": "db",
+   "fromSide": "right",
+   "toSide": "left"
+  },
+  {
+   "id": "c15",
+   "from": "db",
+   "to": "pg",
+   "label": "SQL",
+   "fromSide": "bottom",
+   "toSide": "top"
+  },
+  {
+   "id": "c16",
+   "from": "guard",
+   "to": "db",
+   "label": "Perfil",
+   "fromSide": "top",
+   "toSide": "top"
+  }
+ ]
+}

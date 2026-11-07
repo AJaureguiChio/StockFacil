@@ -1,0 +1,657 @@
+<svg width="970" height="1127.5999755859375" viewBox="6 -3.6000003814697266 970 1127.5999755859375" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="-3.6000003814697266" width="970" height="1127.5999755859375" fill="#FFFFFF"/>
+        
+        
+        
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333333" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <marker id="arrowhead-emphasis" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#1B5E8F" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <marker id="arrowhead-security" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#8A5A00" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <marker id="arrowhead-dashed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#555555" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></path>
+          </pattern>
+          
+          <marker id="er-one-end" markerWidth="24" markerHeight="18" refX="22" refY="8" orient="auto" markerUnits="userSpaceOnUse" stroke-width="1.75">
+            <path d="M 17 1 L 17 15" fill="none" stroke="rgb(91, 100, 116)" stroke-width="1.75px"></path>
+          </marker>
+          <marker id="er-many-start" markerWidth="24" markerHeight="18" refX="0" refY="8" orient="auto" markerUnits="userSpaceOnUse" stroke-width="1.75">
+            <path d="M 14 8 L 0 1 M 14 8 L 0 8 M 14 8 L 0 15" fill="none" stroke="rgb(91, 100, 116)" stroke-width="1.75px"></path>
+          </marker>
+        </defs>
+        
+
+        
+        
+
+        
+        <g>
+          <rect x="20" y="22" width="294" height="444" rx="12" stroke-width="1" fill="#FAFAFA" stroke="#999999"></rect>
+          <rect x="28" y="15" width="58" height="15" rx="7.5" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="29.0" y="11.6" width="84.8" height="18.4" rx="7.5" fill="#FFFFFF" stroke="#999999" stroke-width="1"></rect>
+          <text x="35" y="25.6" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" letter-spacing="0">Negocio</text>
+        </g>
+        <g>
+          <rect x="656" y="22" width="294" height="1088" rx="12" stroke-width="1" fill="#FAFAFA" stroke="#999999"></rect>
+          <rect x="664" y="15" width="126" height="15" rx="7.5" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="665.0" y="10.4" width="189.6" height="19.6" rx="7.5" fill="#FFFFFF" stroke="#999999" stroke-width="1"></rect>
+          <text x="671" y="25.6" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" letter-spacing="0">Catálogo y alertas</text>
+        </g>
+        <g>
+          <rect x="338" y="22" width="294" height="886" rx="12" stroke-width="1" fill="#FAFAFA" stroke="#999999"></rect>
+          <rect x="346" y="15" width="107" height="15" rx="7.5" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="345.8" y="11.6" width="159.2" height="18.4" rx="7.5" fill="#FFFFFF" stroke="#999999" stroke-width="1"></rect>
+          <text x="353" y="25.6" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" letter-spacing="0">Ventas y kardex</text>
+        </g>
+
+        
+        <path d="M 652 390 L 652 760" stroke-width="1.6" fill="none" stroke="#333333"></path>
+
+        
+        <path d="M 803 302 L 803 136" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#555555" stroke-dasharray="3 3"></path>
+        <path d="M 815 618 L 815 644" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#555555" stroke-dasharray="3 3"></path>
+        <path d="M 350 260 L 294 260 Q 286 260 286 268 L 286 302" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#333333"></path>
+        <path d="M 497 302 L 497 276" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#333333"></path>
+        <path d="M 620 390 L 652 390 M 652 448 L 668 448" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#333333"></path>
+        <path d="M 620 760 L 652 760 M 652 472 L 668 472" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#333333"></path>
+        <path d="M 350 660 L 294 660 Q 286 660 286 652 L 286 458" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#555555" stroke-dasharray="3 3"></path>
+        <path d="M 350 772 L 334 772 Q 326 772 326 764 L 326 166 Q 326 158 334 158 L 350 158" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#555555" stroke-dasharray="3 3"></path>
+        <path d="M 620 784 L 668 784" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#555555" stroke-dasharray="3 3"></path>
+        <path d="M 938 1014 L 954 1014 Q 962 1014 962 1006 L 962 468 Q 962 460 954 460 L 938 460" stroke-width="1.6" marker-start="url(#er-many-start)" marker-end="url(#er-one-end)" fill="none" stroke="#333333"></path>
+
+        
+        <g id="node-negocios">
+          
+          <rect x="32" y="40" width="270" height="136" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="32" y="40" width="270" height="136" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 40 40 H 294 A 8 8 0 0 1 302 48 V 70 H 32 V 48 A 8 8 0 0 1 40 40 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="167" y="59" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">negocios</text>
+          <line x1="32" y1="70" x2="302" y2="70" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="32" y1="70" x2="302" y2="70" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="40.0" y="85" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="74" y="85" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="290" y="85" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="32" y1="90" x2="302" y2="90" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="36" y="91" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="74" y="105" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">nombre</text>
+            <text x="290" y="105" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(150)</text>
+          </g>
+          <g>
+            <line x1="32" y1="110" x2="302" y2="110" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="74" y="125" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">moneda</text>
+            <text x="290" y="125" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">CHAR(3)</text>
+          </g>
+          <g>
+            <line x1="32" y1="130" x2="302" y2="130" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="36" y="131" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="74" y="145" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">zona_horaria</text>
+            <text x="290" y="145" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(50)</text>
+          </g>
+          <g>
+            <line x1="32" y1="150" x2="302" y2="150" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="74" y="165" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">creado_en</text>
+            <text x="290" y="165" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+        </g>
+
+        <g id="node-usuarios">
+          
+          <rect x="32" y="302" width="270" height="156" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="32" y="302" width="270" height="156" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 40 302 H 294 A 8 8 0 0 1 302 310 V 332 H 32 V 310 A 8 8 0 0 1 40 302 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="167" y="321" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">usuarios</text>
+          <line x1="32" y1="332" x2="302" y2="332" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="32" y1="332" x2="302" y2="332" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="40.0" y="347" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="74" y="347" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="290" y="347" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="32" y1="352" x2="302" y2="352" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="36" y="353" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="40.0" y="367" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">UK</text>
+            <text x="74" y="367" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">auth_user_id</text>
+            <text x="290" y="367" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">UUID (neon_auth)</text>
+          </g>
+          <g>
+            <line x1="32" y1="372" x2="302" y2="372" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="40.0" y="387" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="74" y="387" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="290" y="387" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="32" y1="392" x2="302" y2="392" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="36" y="393" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="74" y="407" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">rol</text>
+            <text x="290" y="407" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">rol_usuario</text>
+          </g>
+          <g>
+            <line x1="32" y1="412" x2="302" y2="412" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="74" y="427" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">activo</text>
+            <text x="290" y="427" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BOOLEAN</text>
+          </g>
+          <g>
+            <line x1="32" y1="432" x2="302" y2="432" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="36" y="433" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="74" y="447" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">creado_en</text>
+            <text x="290" y="447" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+        </g>
+
+        <g id="node-categorias">
+          
+          <rect x="668" y="40" width="270" height="96" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="668" y="40" width="270" height="96" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 676 40 H 930 A 8 8 0 0 1 938 48 V 70 H 668 V 48 A 8 8 0 0 1 676 40 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="803" y="59" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">categorias</text>
+          <line x1="668" y1="70" x2="938" y2="70" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="668" y1="70" x2="938" y2="70" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="85" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="710" y="85" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="926" y="85" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="668" y1="90" x2="938" y2="90" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="91" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="676.0" y="105" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="105" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="926" y="105" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="110" x2="938" y2="110" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="125" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">UK</text>
+            <text x="710" y="125" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">nombre</text>
+            <text x="926" y="125" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(100)</text>
+          </g>
+        </g>
+
+        <g id="node-proveedores">
+          
+          <rect x="668" y="644" width="270" height="156" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="668" y="644" width="270" height="156" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 676 644 H 930 A 8 8 0 0 1 938 652 V 674 H 668 V 652 A 8 8 0 0 1 676 644 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="803" y="663" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">proveedores</text>
+          <line x1="668" y1="674" x2="938" y2="674" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="668" y1="674" x2="938" y2="674" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="689" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="710" y="689" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="926" y="689" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="668" y1="694" x2="938" y2="694" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="695" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="676.0" y="709" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="709" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="926" y="709" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="714" x2="938" y2="714" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="729" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">nombre</text>
+            <text x="926" y="729" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(150)</text>
+          </g>
+          <g>
+            <line x1="668" y1="734" x2="938" y2="734" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="735" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="749" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">telefono</text>
+            <text x="926" y="749" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(30)</text>
+          </g>
+          <g>
+            <line x1="668" y1="754" x2="938" y2="754" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="769" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">email</text>
+            <text x="926" y="769" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(255)</text>
+          </g>
+          <g>
+            <line x1="668" y1="774" x2="938" y2="774" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="775" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="789" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">activo</text>
+            <text x="926" y="789" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BOOLEAN</text>
+          </g>
+        </g>
+
+        <g id="node-productos">
+          
+          <rect x="668" y="302" width="270" height="316" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="668" y="302" width="270" height="316" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 676 302 H 930 A 8 8 0 0 1 938 310 V 332 H 668 V 310 A 8 8 0 0 1 676 302 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="803" y="321" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">productos</text>
+          <line x1="668" y1="332" x2="938" y2="332" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="668" y1="332" x2="938" y2="332" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="347" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="710" y="347" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="926" y="347" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="668" y1="352" x2="938" y2="352" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="353" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="676.0" y="367" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="367" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="926" y="367" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="372" x2="938" y2="372" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="387" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="387" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">categoria_id</text>
+            <text x="926" y="387" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="392" x2="938" y2="392" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="393" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="676.0" y="407" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="407" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">proveedor_id</text>
+            <text x="926" y="407" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="412" x2="938" y2="412" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="427" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">UK</text>
+            <text x="710" y="427" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">sku</text>
+            <text x="926" y="427" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(60)</text>
+          </g>
+          <g>
+            <line x1="668" y1="432" x2="938" y2="432" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="433" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="447" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">nombre</text>
+            <text x="926" y="447" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VARCHAR(200)</text>
+          </g>
+          <g>
+            <line x1="668" y1="452" x2="938" y2="452" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="467" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">descripcion</text>
+            <text x="926" y="467" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TEXT</text>
+          </g>
+          <g>
+            <line x1="668" y1="472" x2="938" y2="472" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="473" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="487" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">precio_costo</text>
+            <text x="926" y="487" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="668" y1="492" x2="938" y2="492" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="507" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">precio_venta</text>
+            <text x="926" y="507" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="668" y1="512" x2="938" y2="512" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="513" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="527" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">stock_actual</text>
+            <text x="926" y="527" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,3)</text>
+          </g>
+          <g>
+            <line x1="668" y1="532" x2="938" y2="532" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="547" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">stock_minimo</text>
+            <text x="926" y="547" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,3)</text>
+          </g>
+          <g>
+            <line x1="668" y1="552" x2="938" y2="552" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="553" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="567" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">activo</text>
+            <text x="926" y="567" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BOOLEAN</text>
+          </g>
+          <g>
+            <line x1="668" y1="572" x2="938" y2="572" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="587" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">creado_en</text>
+            <text x="926" y="587" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+          <g>
+            <line x1="668" y1="592" x2="938" y2="592" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="593" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="607" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">actualizado_en</text>
+            <text x="926" y="607" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+        </g>
+
+        <g id="node-ventas">
+          
+          <rect x="350" y="40" width="270" height="236" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="350" y="40" width="270" height="236" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 358 40 H 612 A 8 8 0 0 1 620 48 V 70 H 350 V 48 A 8 8 0 0 1 358 40 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="485" y="59" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">ventas</text>
+          <line x1="350" y1="70" x2="620" y2="70" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="350" y1="70" x2="620" y2="70" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="85" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="392" y="85" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="608" y="85" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="350" y1="90" x2="620" y2="90" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="91" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="358.0" y="105" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="105" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="608" y="105" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="110" x2="620" y2="110" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="125" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="125" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">usuario_id</text>
+            <text x="608" y="125" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="130" x2="620" y2="130" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="131" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="145" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">fecha</text>
+            <text x="608" y="145" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+          <g>
+            <line x1="350" y1="150" x2="620" y2="150" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="165" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">metodo_pago</text>
+            <text x="608" y="165" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">metodo_pago</text>
+          </g>
+          <g>
+            <line x1="350" y1="170" x2="620" y2="170" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="171" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="185" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">subtotal</text>
+            <text x="608" y="185" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="350" y1="190" x2="620" y2="190" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="205" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">descuento</text>
+            <text x="608" y="205" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="350" y1="210" x2="620" y2="210" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="211" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="225" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">total</text>
+            <text x="608" y="225" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="350" y1="230" x2="620" y2="230" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="245" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">estado</text>
+            <text x="608" y="245" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">estado_venta</text>
+          </g>
+          <g>
+            <line x1="350" y1="250" x2="620" y2="250" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="251" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="265" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">notas</text>
+            <text x="608" y="265" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TEXT</text>
+          </g>
+        </g>
+
+        <g id="node-venta_detalles">
+          
+          <rect x="350" y="302" width="270" height="176" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="350" y="302" width="270" height="176" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 358 302 H 612 A 8 8 0 0 1 620 310 V 332 H 350 V 310 A 8 8 0 0 1 358 302 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="485" y="321" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">venta_detalles</text>
+          <line x1="350" y1="332" x2="620" y2="332" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="350" y1="332" x2="620" y2="332" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="347" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="392" y="347" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="608" y="347" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="350" y1="352" x2="620" y2="352" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="353" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="358.0" y="367" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="367" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">venta_id</text>
+            <text x="608" y="367" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="372" x2="620" y2="372" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="387" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="387" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">producto_id</text>
+            <text x="608" y="387" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="392" x2="620" y2="392" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="393" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="407" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">cantidad</text>
+            <text x="608" y="407" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,3)</text>
+          </g>
+          <g>
+            <line x1="350" y1="412" x2="620" y2="412" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="427" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">precio_unitario</text>
+            <text x="608" y="427" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="350" y1="432" x2="620" y2="432" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="433" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="447" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">costo_unitario</text>
+            <text x="608" y="447" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="350" y1="452" x2="620" y2="452" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="467" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">subtotal</text>
+            <text x="608" y="467" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+        </g>
+
+        <g id="node-movimientos_inventario">
+          
+          <rect x="350" y="644" width="270" height="256" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="350" y="644" width="270" height="256" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 358 644 H 612 A 8 8 0 0 1 620 652 V 674 H 350 V 652 A 8 8 0 0 1 358 644 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="485" y="663" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">movimientos_inventario</text>
+          <line x1="350" y1="674" x2="620" y2="674" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="350" y1="674" x2="620" y2="674" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="689" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="392" y="689" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="608" y="689" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="350" y1="694" x2="620" y2="694" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="695" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="358.0" y="709" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="709" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="608" y="709" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="714" x2="620" y2="714" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="729" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="729" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">producto_id</text>
+            <text x="608" y="729" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="734" x2="620" y2="734" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="735" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="358.0" y="749" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="749" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">usuario_id</text>
+            <text x="608" y="749" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="754" x2="620" y2="754" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="358.0" y="769" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="769" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">venta_id</text>
+            <text x="608" y="769" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="774" x2="620" y2="774" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="775" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="358.0" y="789" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="392" y="789" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">proveedor_id</text>
+            <text x="608" y="789" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="350" y1="794" x2="620" y2="794" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="809" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">tipo</text>
+            <text x="608" y="809" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">tipo_movimiento</text>
+          </g>
+          <g>
+            <line x1="350" y1="814" x2="620" y2="814" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="815" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="829" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">cantidad</text>
+            <text x="608" y="829" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,3)</text>
+          </g>
+          <g>
+            <line x1="350" y1="834" x2="620" y2="834" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="849" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">costo_unitario</text>
+            <text x="608" y="849" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,2)</text>
+          </g>
+          <g>
+            <line x1="350" y1="854" x2="620" y2="854" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="354" y="855" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="392" y="869" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">motivo</text>
+            <text x="608" y="869" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TEXT</text>
+          </g>
+          <g>
+            <line x1="350" y1="874" x2="620" y2="874" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="392" y="889" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">fecha</text>
+            <text x="608" y="889" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+        </g>
+
+        <g id="node-alertas">
+          
+          <rect x="668" y="926" width="270" height="176" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="668" y="926" width="270" height="176" rx="8" stroke-width="1.5" fill="#FFFFFF" stroke="#5B3A80"></rect>
+          <path d="M 676 926 H 930 A 8 8 0 0 1 938 934 V 956 H 668 V 934 A 8 8 0 0 1 676 926 Z" fill="#D9CDE6" stroke="none" stroke-width="1px"></path>
+          
+          
+          <text x="803" y="945" font-size="16.27" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">alertas</text>
+          <line x1="668" y1="956" x2="938" y2="956" stroke-width="1px" fill="none" stroke="#CCCCCC"></line>
+          <g>
+            <line x1="668" y1="956" x2="938" y2="956" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="971" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">PK</text>
+            <text x="710" y="971" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">id</text>
+            <text x="926" y="971" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGSERIAL</text>
+          </g>
+          <g>
+            <line x1="668" y1="976" x2="938" y2="976" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="977" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+            <text x="676.0" y="991" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="991" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id</text>
+            <text x="926" y="991" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="996" x2="938" y2="996" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+            <text x="676.0" y="1011" font-size="13.79" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1" text-anchor="start">FK</text>
+            <text x="710" y="1011" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">producto_id</text>
+            <text x="926" y="1011" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BIGINT</text>
+          </g>
+          <g>
+            <line x1="668" y1="1016" x2="938" y2="1016" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="1017" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="1031" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">mensaje</text>
+            <text x="926" y="1031" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TEXT</text>
+          </g>
+          <g>
+            <line x1="668" y1="1036" x2="938" y2="1036" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="1051" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">stock_al_generar</text>
+            <text x="926" y="1051" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">NUMERIC(12,3)</text>
+          </g>
+          <g>
+            <line x1="668" y1="1056" x2="938" y2="1056" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+            <rect x="672" y="1057" width="262" height="18" rx="4" fill="#F4F4F4" stroke="none" stroke-width="1px"></rect>
+
+            <text x="710" y="1071" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">leida</text>
+            <text x="926" y="1071" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BOOLEAN</text>
+          </g>
+          <g>
+            <line x1="668" y1="1076" x2="938" y2="1076" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></line>
+
+
+            <text x="710" y="1091" font-size="13.79" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">creada_en</text>
+            <text x="926" y="1091" font-size="13.79" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">TIMESTAMPTZ</text>
+          </g>
+        </g>
+
+        
+
+
+        
+
+      <text x="22" y="492" font-size="13.79" font-family="Arial, Helvetica, sans-serif" fill="#111111">Líneas omitidas: 7 tablas referencian</text><text x="22" y="509.92322617630197" font-size="13.79" font-family="Arial, Helvetica, sans-serif" fill="#111111">negocios.id mediante negocio_id.</text><text x="22" y="527.8464523526039" font-size="13.79" font-family="Arial, Helvetica, sans-serif" fill="#111111">Línea discontinua: FK que admite NULL.</text></svg>

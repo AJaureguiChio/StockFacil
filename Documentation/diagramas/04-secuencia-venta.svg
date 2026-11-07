@@ -1,0 +1,228 @@
+<svg width="860" height="760" viewBox="34 58 860 760" xmlns="http://www.w3.org/2000/svg"><rect x="34" y="58" width="860" height="760" fill="#FFFFFF"/>
+        
+        
+        
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333333" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <marker id="arrowhead-emphasis" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#1B5E8F" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <marker id="arrowhead-security" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#8A5A00" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <marker id="arrowhead-dashed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#555555" stroke="none" stroke-width="1px"></polygon>
+          </marker>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" stroke-width="0.5px" fill="none" stroke="#CCCCCC"></path>
+          </pattern>
+        </defs>
+
+        
+        
+
+        
+        <rect x="48" y="268" width="824" height="422" rx="10" stroke-width="1" fill="#F4F4F4" stroke="#999999" stroke-dasharray="6px, 6px"></rect>
+
+        
+        <path d="M 149.5 142 L 149.5 804" stroke-width="1.6" stroke-dasharray="3px, 7px" fill="none" stroke="#333333"></path>
+        <path d="M 363.83333333333337 142 L 363.83333333333337 804" stroke-width="1.6" stroke-dasharray="3px, 7px" fill="none" stroke="#333333"></path>
+        <path d="M 578.1666666666667 142 L 578.1666666666667 804" stroke-width="1.6" stroke-dasharray="3px, 7px" fill="none" stroke="#333333"></path>
+        <path d="M 792.5 142 L 792.5 804" stroke-width="1.6" stroke-dasharray="3px, 7px" fill="none" stroke="#333333"></path>
+
+        
+
+
+        
+        <g>
+          <path d="M 156.5 170 L 356.83333333333337 170" stroke-width="2.2" marker-end="url(#arrowhead-emphasis)" fill="none" stroke="#1B5E8F"></path>
+        <g>
+          <rect x="158.4" y="147.4" width="196.6" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="256.6666666666667" y="160" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">POST /api/ventas + Bearer JWT</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 204 L 571.1666666666667 204" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="392.7" y="181.4" width="156.8" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.0000000000001" y="194" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">Guard: SELECT usuarios</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 571.1666666666667 238 L 370.83333333333337 238" stroke-width="1.6" stroke-dasharray="3px, 5px" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="408.4" y="215.4" width="125.3" height="17.0" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="228" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">negocio_id del perfil</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 298 L 571.1666666666667 298" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="446.5" y="275.4" width="49.0" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="288" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">BEGIN</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 332 L 571.1666666666667 332" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="366.9" y="309.4" width="208.3" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.0000000000001" y="322" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">SELECT productos FOR UPDATE</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 571.1666666666667 366 L 370.83333333333337 366" stroke-width="1.6" stroke-dasharray="3px, 5px" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="417.2" y="343.4" width="107.9" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="356" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">Filas bloqueadas</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 356.83333333333337 400 L 156.5 400" stroke-width="1.6" marker-end="url(#arrowhead-dashed)" fill="none" stroke="#555555" stroke-dasharray="3 3"></path>
+        <g>
+          <rect x="166.5" y="377.4" width="180.2" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="256.6666666666667" y="390" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">Si falla: ROLLBACK, 400/409</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 434 L 571.1666666666667 434" stroke-width="2.2" marker-end="url(#arrowhead-emphasis)" fill="none" stroke="#1B5E8F"></path>
+        <g>
+          <rect x="421.8" y="411.4" width="98.6" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="424" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">INSERT ventas</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 468 L 571.1666666666667 468" stroke-width="2.2" marker-end="url(#arrowhead-emphasis)" fill="none" stroke="#1B5E8F"></path>
+        <g>
+          <rect x="366.8" y="445.4" width="208.3" height="17.0" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="458" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">INSERT venta_detalles (por línea)</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 585.1666666666667 502 L 785.5 502" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="619.8" y="479.4" width="131.3" height="17.0" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="685.3333333333334" y="492" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">trg_salida_por_venta</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 785.5 536 L 585.1666666666667 536" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="583.0" y="513.4" width="204.8" height="17.0" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="685.3333333333334" y="526" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">INSERT movimiento salida_venta</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 585.1666666666667 570 L 785.5 570" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="613.2" y="547.4" width="144.5" height="17.0" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="685.3333333333334" y="560" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">trg_aplicar_movimiento</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 785.5 604 L 585.1666666666667 604" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="585.8" y="581.4" width="199.0" height="17.0" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="685.3333333333335" y="594" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">UPDATE productos.stock_actual</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 785.5 638 L 585.1666666666667 638" stroke-width="1.6" marker-end="url(#arrowhead-security)" fill="none" stroke="#8A5A00" stroke-dasharray="6 3"></path>
+        <g>
+          <rect x="580.1" y="615.4" width="210.6" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="685.3333333333334" y="628" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">Si stock ≤ mínimo: INSERT alertas</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 672 L 571.1666666666667 672" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="440.3" y="649.4" width="61.6" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="662" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">COMMIT</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 370.83333333333337 718 L 571.1666666666667 718" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="393.2" y="695.4" width="155.2" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="471.00000000000006" y="708" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">findOne: venta + detalles</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 356.83333333333337 752 L 156.5 752" stroke-width="1.6" stroke-dasharray="3px, 5px" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="199.2" y="729.4" width="115.0" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="256.6666666666667" y="742" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">201 Venta (JSON)</text>
+        </g>
+        </g>
+
+        <g>
+          <path d="M 156.5 786 L 356.83333333333337 786" stroke-width="1.6" marker-end="url(#arrowhead)" fill="none" stroke="#333333"></path>
+        <g>
+          <rect x="167.4" y="763.4" width="178.8" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="256.6666666666667" y="776" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">Recarga: GET /api/productos</text>
+        </g>
+        </g>
+
+        
+        <g>
+          <rect x="58.0" y="246.4" width="120.4" height="16.4" rx="3" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <text x="62" y="259" font-size="13.19" font-weight="400" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">Transacción db.tx()</text>
+        </g>
+
+        
+        <g id="node-web">
+          
+          <rect x="62" y="72" width="175" height="60" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="62" y="72" width="175" height="60" rx="8" stroke-width="1.5" fill="#E6F0FA" stroke="#1B5E8F"></rect>
+          
+          <text x="149.5" y="98.8" font-size="15.56" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">Pantalla Vender</text>
+          <text x="149.5" y="115.9" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">/vender (React)</text>
+        </g>
+
+        <g id="node-api">
+          
+          <rect x="276.33333333333337" y="72" width="175" height="60" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="276.33333333333337" y="72" width="175" height="60" rx="8" stroke-width="2.5" fill="#E3F3E8" stroke="#2B6E48"></rect>
+          
+          <text x="363.8" y="98.8" font-size="15.56" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">API NestJS</text>
+          <text x="363.8" y="115.9" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">VentasService</text>
+        </g>
+
+        <g id="node-db">
+          
+          <rect x="490.66666666666674" y="72" width="175" height="60" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="490.66666666666674" y="72" width="175" height="60" rx="8" stroke-width="1.5" fill="#D9CDE6" stroke="#5B3A80"></rect>
+          
+          <text x="578.2" y="98.8" font-size="15.56" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">PostgreSQL</text>
+          <text x="578.2" y="115.9" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">tablas</text>
+        </g>
+
+        <g id="node-trg">
+          
+          <rect x="705" y="72" width="175" height="60" rx="6" fill="#FFFFFF" stroke="none" stroke-width="1px"></rect>
+          <rect x="705" y="72" width="175" height="60" rx="8" stroke-width="1.5" fill="#D9CDE6" stroke="#5B3A80"></rect>
+          
+          <text x="792.5" y="98.8" font-size="15.56" font-weight="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#111111" stroke="none" opacity="1">Triggers</text>
+          <text x="792.5" y="115.9" font-size="13.19" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" fill="#111111" stroke="none" opacity="1">kardex y stock</text>
+        </g>
+
+        
+
+      </svg>

@@ -1,0 +1,86 @@
+---
+config:
+  flowchart:
+    rankSpacing: 26
+    nodeSpacing: 22
+    padding: 8
+---
+%% Recorrido completo de la persona usuaria, en 8 etapas. Fuente: App.tsx, Shell.tsx, Onboarding.tsx, ProductoForm.tsx, Inicio.tsx, Vender.tsx, Ventas.tsx, Inventario.tsx, api.ts, servicios del backend, schema.sql
+%% Nota al pie (exportar.mjs, variable NOTE):
+%% Endpoints bajo /api. Con negocio ya creado, tras iniciar sesión se entra directo a Inicio.
+flowchart TB
+  subgraph A["Preparar el negocio"]
+    direction LR
+    s1["`**1. Registro**
+Usuario: crea su cuenta con
+correo y contraseña
+Sistema: autentica y asigna sesión
+Pantalla: Registro e inicio de sesión
+/auth/sign-up, /auth/sign-in
+API: ninguna (SDK de Neon Auth)`"]:::auth
+    s2["`**2. Alta del negocio**
+Usuario: escribe el nombre
+de su tienda
+Sistema: crea el negocio y lo
+asocia como propietario
+Pantalla: Alta del negocio (/)
+API: GET /me · POST /onboarding`"]:::pantalla
+    s3["`**3. Catálogo**
+Usuario: alta de productos con precio,
+stock inicial y stock mínimo
+Sistema: registra el stock inicial
+como primer movimiento
+Pantalla: Productos (/productos)
+API: POST /productos`"]:::pantalla
+    s1 --> s2 --> s3
+  end
+  subgraph B["Operar cada día"]
+    direction LR
+    s4["`**4. Inventario**
+Usuario: registra entradas,
+mermas o devoluciones
+Sistema: actualiza existencias
+y conserva el historial
+Pantalla: Inventario (/inventario)
+API: POST /inventario/movimientos`"]:::pantalla
+    s5["`**5. Venta**
+Usuario: busca, arma el carrito,
+aplica descuento y elige el pago
+Sistema: valida existencias, registra
+la venta y descuenta inventario
+Pantalla: Vender (/vender)
+API: GET /productos · POST /ventas`"]:::pantalla
+    s6["`**6. Alertas**
+Usuario: ve el stock mínimo
+y repone desde la alerta
+Sistema: genera el aviso
+automáticamente
+Pantalla: Inicio (/)
+Reponer: /inventario?producto=ID
+API: GET /alertas
+POST /inventario/movimientos`"]:::pantalla
+    s4 --> s5 --> s6
+  end
+  subgraph C["Revisar resultados"]
+    direction LR
+    s7["`**7. Resultados**
+Usuario: consulta ventas, utilidad,
+más vendidos y valor del inventario
+Sistema: calcula indicadores
+con ventas completadas
+Pantalla: Inicio (/)
+API: GET /reportes/ (resumen,
+ventas, productos-top)`"]:::pantalla
+    s8["`**8. Historial**
+Usuario: revisa ventas y anula
+una si hubo error
+Sistema: devuelve existencias y
+la excluye de los reportes
+Pantalla: Ventas (/ventas)
+API: GET /ventas
+PATCH /ventas/:id/anular`"]:::pantalla
+    s7 --> s8
+  end
+  A --> B --> C
+  classDef pantalla fill:#E6F0FA,stroke:#1B5E8F,stroke-width:1.5px,color:#111111
+  classDef auth fill:#FFF3DC,stroke:#8A5A00,stroke-width:1.5px,stroke-dasharray:6 3,color:#111111

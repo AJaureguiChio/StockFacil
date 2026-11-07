@@ -1,0 +1,18 @@
+{
+  "theme": "base",
+  "htmlLabels": false,
+  "flowchart": { "htmlLabels": false, "useMaxWidth": false, "nodeSpacing": 34, "rankSpacing": 44, "padding": 12, "curve": "linear", "wrappingWidth": 600, "subGraphTitleMargin": { "top": 4, "bottom": 8 } },
+  "themeVariables": {
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontSize": "15px",
+    "background": "#FFFFFF",
+    "primaryColor": "#E6F0FA",
+    "primaryBorderColor": "#1B5E8F",
+    "primaryTextColor": "#111111",
+    "lineColor": "#333333",
+    "textColor": "#111111",
+    "clusterBkg": "#FAFAFA",
+    "clusterBorder": "#999999",
+    "edgeLabelBackground": "#FFFFFF"
+  }
+}

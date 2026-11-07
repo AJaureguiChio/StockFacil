@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { api } from '../api';
 import type { Categoria, Producto, Proveedor } from '../api';
 import ProductoForm from '../components/ProductoForm';
@@ -18,6 +18,7 @@ export default function Productos() {
     const [busqueda, setBusqueda] = useState(''); // q con retraso, para no consultar en cada tecla
     const [estado, setEstado] = useState<Estado>('activos');
     const [soloBajo, setSoloBajo] = useState(false);
+    const [categoriaId, setCategoriaId] = useState(''); // '' = todas
     const [version, setVersion] = useState(0); // al cambiar, se vuelve a cargar la lista
     const [editor, setEditor] = useState<Editor>(null);
     const [error, setError] = useState('');
@@ -47,6 +48,10 @@ export default function Productos() {
     }, [busqueda, estado, soloBajo, version]);
 
     const recargar = () => setVersion((v) => v + 1);
+    const visibles = useMemo(
+        () => (categoriaId ? productos?.filter((p) => p.categoria_id === Number(categoriaId)) ?? null : productos),
+        [productos, categoriaId],
+    );
 
     async function accion(fn: () => Promise<unknown>) {
         try { await fn(); recargar(); } catch (e) { setError((e as Error).message); }
@@ -66,6 +71,12 @@ export default function Productos() {
 
             <div className="flex flex-wrap items-center gap-3">
                 <input className={`${input} max-w-xs`} placeholder="Buscar por nombre o SKU" value={q} onChange={(e) => setQ(e.target.value)} />
+                <select className={`${input} w-auto`} value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)}>
+                    <option value="">Todas las categorías</option>
+                    {categorias.map((c) => (
+                        <option key={c.id} value={c.id}>{c.nombre}</option>
+                    ))}
+                </select>
                 <select className={`${input} w-auto`} value={estado} onChange={(e) => setEstado(e.target.value as Estado)}>
                     <option value="activos">Activos</option>
                     <option value="desactivados">Desactivados</option>
@@ -91,13 +102,13 @@ export default function Productos() {
                         </tr>
                     </thead>
                     <tbody>
-                        {productos === null && (
+                        {visibles === null && (
                             <tr><td colSpan={5} className="p-6 text-center text-muted-foreground">Cargando…</td></tr>
                         )}
-                        {productos?.length === 0 && (
+                        {visibles?.length === 0 && (
                             <tr><td colSpan={5} className="p-6 text-center text-muted-foreground">No hay productos con estos filtros.</td></tr>
                         )}
-                        {productos?.map((p) => (
+                        {visibles?.map((p) => (
                             <tr key={p.id} className={`border-t border-border ${p.activo ? '' : 'opacity-60'}`}>
                                 <td className="p-3 font-mono">{p.sku}</td>
                                 <td className="p-3">

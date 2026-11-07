@@ -1,0 +1,35 @@
+%% Recorrido de la persona usuaria: primer uso. Fuente: App.tsx, Shell.tsx, Onboarding.tsx, ProductoForm.tsx, Vender.tsx, api.ts
+flowchart TB
+  subgraph A["Cuenta y negocio"]
+    direction LR
+    s1["`**1. Registro**
+Pantalla: /auth/sign-up
+API: ninguna (SDK de Neon Auth)`"]:::auth
+    s2["`**2. Inicio de sesión**
+Pantalla: /auth/sign-in
+API: ninguna (SDK de Neon Auth)`"]:::auth
+    s3["`**3. Onboarding: crear negocio**
+Pantalla: / (el Shell lo muestra)
+GET /api/me → perfil null
+POST /api/onboarding`"]:::pantalla
+    s1 --> s2 --> s3
+  end
+  subgraph B["Catálogo y primera venta"]
+    direction LR
+    s4["`**4. Categorías y productos**
+Pantalla: /productos (modal)
+POST /api/categorias
+POST /api/productos`"]:::pantalla
+    s5["`**5. Stock inicial**
+Pantalla: /productos (mismo modal)
+POST /api/productos + stock_inicial
+Crea movimiento entrada_ajuste`"]:::pantalla
+    s6["`**6. Primera venta**
+Pantalla: /vender
+GET /api/productos?activo=true
+POST /api/ventas`"]:::pantalla
+    s4 --> s5 --> s6
+  end
+  A -->|"Negocio creado"| B
+  classDef pantalla fill:#E6F0FA,stroke:#1B5E8F,stroke-width:1.5px,color:#111111
+  classDef auth fill:#FFF3DC,stroke:#8A5A00,stroke-width:1.5px,stroke-dasharray:6 3,color:#111111

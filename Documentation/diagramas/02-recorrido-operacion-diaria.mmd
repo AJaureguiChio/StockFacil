@@ -1,0 +1,36 @@
+%% Recorrido de la persona usuaria: operación diaria. Fuente: Inicio.tsx, Vender.tsx, Ventas.tsx, Inventario.tsx, api.ts
+flowchart TB
+  subgraph A["Consultar y vender"]
+    direction LR
+    s1["`**1. Inicio: dashboard y alertas**
+Pantalla: /
+GET /api/reportes/resumen, /ventas,
+/productos-top · GET /api/alertas`"]:::pantalla
+    s2["`**2. Vender**
+Pantalla: /vender
+GET /api/productos?activo=true
+POST /api/ventas`"]:::pantalla
+    s3["`**3. Historial y anulación**
+Pantalla: /ventas
+GET /api/ventas · GET /api/ventas/:id
+PATCH /api/ventas/:id/anular`"]:::pantalla
+    s1 --> s2 --> s3
+  end
+  subgraph B["Mantener el inventario"]
+    direction LR
+    s4["`**4. Entradas, mermas, devoluciones**
+Pantalla: /inventario
+GET /api/inventario/movimientos
+POST /api/inventario/movimientos`"]:::pantalla
+    s5["`**5. Alerta: botón «Reponer»**
+Pantalla: / → /inventario?producto=ID
+GET /api/productos?activo=true
+Producto ya preseleccionado`"]:::pantalla
+    s6["`**6. Registrar la reposición**
+Pantalla: /inventario?producto=ID
+POST /api/inventario/movimientos
+Stock > mínimo: cierra la alerta`"]:::pantalla
+    s4 --> s5 --> s6
+  end
+  A -->|"Control de stock"| B
+  classDef pantalla fill:#E6F0FA,stroke:#1B5E8F,stroke-width:1.5px,color:#111111

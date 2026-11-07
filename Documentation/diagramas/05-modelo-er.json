@@ -1,0 +1,583 @@
+{
+ "schema_version": 1,
+ "diagram_type": "erd",
+ "meta": {
+  "title": "Modelo entidad-relación (9 tablas)",
+  "locale": "es",
+  "quality_profile": "standard",
+  "legend": {
+   "mode": "hidden"
+  },
+  "output": "05-modelo-er.html",
+  "repository": {
+   "url": "https://github.com/AJaureguiChio/StockFacil.git",
+   "revision": "57e25acd5774c591928de3bfd453eadd56548d53"
+  }
+ },
+ "layout": {
+  "mode": "grid",
+  "gapX": 48,
+  "gapY": 26,
+  "rowH": 20
+ },
+ "entities": [
+  {
+   "id": "negocios",
+   "label": "negocios",
+   "sublabel": "7 tablas la referencian por negocio_id",
+   "tag": "Negocio",
+   "row": 0,
+   "col": 0,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "nombre",
+     "type": "VARCHAR(150)"
+    },
+    {
+     "name": "moneda",
+     "type": "CHAR(3)"
+    },
+    {
+     "name": "zona_horaria",
+     "type": "VARCHAR(50)"
+    },
+    {
+     "name": "creado_en",
+     "type": "TIMESTAMPTZ"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 21,
+     "end_line": 27
+    }
+   ]
+  },
+  {
+   "id": "usuarios",
+   "label": "usuarios",
+   "tag": "Negocio",
+   "row": 1,
+   "col": 0,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "auth_user_id",
+     "type": "UUID (neon_auth)",
+     "key": "uk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "rol",
+     "type": "rol_usuario"
+    },
+    {
+     "name": "activo",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "creado_en",
+     "type": "TIMESTAMPTZ"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 31,
+     "end_line": 38
+    }
+   ]
+  },
+  {
+   "id": "categorias",
+   "label": "categorias",
+   "tag": "Catálogo y alertas",
+   "row": 0,
+   "col": 2,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "nombre",
+     "type": "VARCHAR(100)",
+     "key": "uk"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 42,
+     "end_line": 47
+    }
+   ]
+  },
+  {
+   "id": "proveedores",
+   "label": "proveedores",
+   "tag": "Catálogo y alertas",
+   "row": 2,
+   "col": 2,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "nombre",
+     "type": "VARCHAR(150)"
+    },
+    {
+     "name": "telefono",
+     "type": "VARCHAR(30)"
+    },
+    {
+     "name": "email",
+     "type": "VARCHAR(255)"
+    },
+    {
+     "name": "activo",
+     "type": "BOOLEAN"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 49,
+     "end_line": 56
+    }
+   ]
+  },
+  {
+   "id": "productos",
+   "label": "productos",
+   "tag": "Catálogo y alertas",
+   "row": 1,
+   "col": 2,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "categoria_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "categorias.id"
+    },
+    {
+     "name": "proveedor_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "proveedores.id"
+    },
+    {
+     "name": "sku",
+     "type": "VARCHAR(60)",
+     "key": "uk"
+    },
+    {
+     "name": "nombre",
+     "type": "VARCHAR(200)"
+    },
+    {
+     "name": "descripcion",
+     "type": "TEXT"
+    },
+    {
+     "name": "precio_costo",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "precio_venta",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "stock_actual",
+     "type": "NUMERIC(12,3)"
+    },
+    {
+     "name": "stock_minimo",
+     "type": "NUMERIC(12,3)"
+    },
+    {
+     "name": "activo",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "creado_en",
+     "type": "TIMESTAMPTZ"
+    },
+    {
+     "name": "actualizado_en",
+     "type": "TIMESTAMPTZ"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 59,
+     "end_line": 76
+    }
+   ]
+  },
+  {
+   "id": "ventas",
+   "label": "ventas",
+   "tag": "Ventas y kardex",
+   "row": 0,
+   "col": 1,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "usuario_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "usuarios.id"
+    },
+    {
+     "name": "fecha",
+     "type": "TIMESTAMPTZ"
+    },
+    {
+     "name": "metodo_pago",
+     "type": "metodo_pago"
+    },
+    {
+     "name": "subtotal",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "descuento",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "total",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "estado",
+     "type": "estado_venta"
+    },
+    {
+     "name": "notas",
+     "type": "TEXT"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 82,
+     "end_line": 93
+    }
+   ]
+  },
+  {
+   "id": "venta_detalles",
+   "label": "venta_detalles",
+   "tag": "Ventas y kardex",
+   "row": 1,
+   "col": 1,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "venta_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "ventas.id"
+    },
+    {
+     "name": "producto_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "productos.id"
+    },
+    {
+     "name": "cantidad",
+     "type": "NUMERIC(12,3)"
+    },
+    {
+     "name": "precio_unitario",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "costo_unitario",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "subtotal",
+     "type": "NUMERIC(12,2)"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 96,
+     "end_line": 104
+    }
+   ]
+  },
+  {
+   "id": "movimientos_inventario",
+   "label": "movimientos_inventario",
+   "tag": "Ventas y kardex",
+   "row": 2,
+   "col": 1,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "producto_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "productos.id"
+    },
+    {
+     "name": "usuario_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "usuarios.id"
+    },
+    {
+     "name": "venta_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "ventas.id"
+    },
+    {
+     "name": "proveedor_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "proveedores.id"
+    },
+    {
+     "name": "tipo",
+     "type": "tipo_movimiento"
+    },
+    {
+     "name": "cantidad",
+     "type": "NUMERIC(12,3)"
+    },
+    {
+     "name": "costo_unitario",
+     "type": "NUMERIC(12,2)"
+    },
+    {
+     "name": "motivo",
+     "type": "TEXT"
+    },
+    {
+     "name": "fecha",
+     "type": "TIMESTAMPTZ"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 109,
+     "end_line": 121
+    }
+   ]
+  },
+  {
+   "id": "alertas",
+   "label": "alertas",
+   "tag": "Catálogo y alertas",
+   "row": 3,
+   "col": 2,
+   "width": 270,
+   "attributes": [
+    {
+     "name": "id",
+     "type": "BIGSERIAL",
+     "key": "pk"
+    },
+    {
+     "name": "negocio_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "negocios.id"
+    },
+    {
+     "name": "producto_id",
+     "type": "BIGINT",
+     "key": "fk",
+     "references": "productos.id"
+    },
+    {
+     "name": "mensaje",
+     "type": "TEXT"
+    },
+    {
+     "name": "stock_al_generar",
+     "type": "NUMERIC(12,3)"
+    },
+    {
+     "name": "leida",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "creada_en",
+     "type": "TIMESTAMPTZ"
+    }
+   ],
+   "sources": [
+    {
+     "path": "Documentation/Schema/schema.sql",
+     "line": 126,
+     "end_line": 134
+    }
+   ]
+  }
+ ],
+ "relationships": [
+  {
+   "id": "productos_categoria_id",
+   "from": "productos",
+   "to": "categorias",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": false
+  },
+  {
+   "id": "productos_proveedor_id",
+   "from": "productos",
+   "to": "proveedores",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": false
+  },
+  {
+   "id": "ventas_usuario_id",
+   "from": "ventas",
+   "to": "usuarios",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": true
+  },
+  {
+   "id": "venta_detalles_venta_id",
+   "from": "venta_detalles",
+   "to": "ventas",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": true
+  },
+  {
+   "id": "venta_detalles_producto_id",
+   "from": "venta_detalles",
+   "to": "productos",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": true
+  },
+  {
+   "id": "movimientos_inventario_producto_id",
+   "from": "movimientos_inventario",
+   "to": "productos",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": true
+  },
+  {
+   "id": "movimientos_inventario_usuario_id",
+   "from": "movimientos_inventario",
+   "to": "usuarios",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": false
+  },
+  {
+   "id": "movimientos_inventario_venta_id",
+   "from": "movimientos_inventario",
+   "to": "ventas",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": false
+  },
+  {
+   "id": "movimientos_inventario_proveedor_id",
+   "from": "movimientos_inventario",
+   "to": "proveedores",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": false
+  },
+  {
+   "id": "alertas_producto_id",
+   "from": "alertas",
+   "to": "productos",
+   "fromCardinality": "many",
+   "toCardinality": "one",
+   "identifying": true
+  }
+ ]
+}

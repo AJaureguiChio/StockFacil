@@ -71,17 +71,19 @@ export default function Productos() {
 
             <div className="flex flex-wrap items-center gap-3">
                 <input className={`${input} max-w-xs`} placeholder="Buscar por nombre o SKU" value={q} onChange={(e) => setQ(e.target.value)} />
-                <select className={`${input} w-auto`} value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)}>
-                    <option value="">Todas las categorías</option>
-                    {categorias.map((c) => (
-                        <option key={c.id} value={c.id}>{c.nombre}</option>
-                    ))}
-                </select>
-                <select className={`${input} w-auto`} value={estado} onChange={(e) => setEstado(e.target.value as Estado)}>
-                    <option value="activos">Activos</option>
-                    <option value="desactivados">Desactivados</option>
-                    <option value="todos">Todos</option>
-                </select>
+                <div className="grid grid-cols-2 gap-3">
+                    <select className={input} value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)}>
+                        <option value="">Todas las categorías</option>
+                        {categorias.map((c) => (
+                            <option key={c.id} value={c.id}>{c.nombre}</option>
+                        ))}
+                    </select>
+                    <select className={input} value={estado} onChange={(e) => setEstado(e.target.value as Estado)}>
+                        <option value="activos">Activos</option>
+                        <option value="desactivados">Desactivados</option>
+                        <option value="todos">Todos</option>
+                    </select>
+                </div>
                 <label className="flex items-center gap-2 text-sm">
                     <input type="checkbox" checked={soloBajo} onChange={(e) => setSoloBajo(e.target.checked)} />
                     Solo stock bajo

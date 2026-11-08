@@ -14,7 +14,10 @@ function Marco() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <header className="border-b border-border px-4 py-3">
-        <Link to="/" className="text-lg font-bold tracking-tight">Stock Facil</Link>
+        <Link to="/" className="text-lg font-bold tracking-tight">
+          <img src="/stockfacil-logo.svg" alt="" className="h-7 w-7">
+          Stock Facil
+        </Link>
       </header>
       {/* El contenido ocupa el espacio disponible; se anula min-h-screen de la página hija para que el footer quede visible */}
       <div className="flex flex-1 flex-col [&>*]:min-h-0! [&>*]:flex-1">

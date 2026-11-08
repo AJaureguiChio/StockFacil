@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- caja isométrica -->
+  <g stroke-linejoin="round">
+    <path d="M256 112 L388 180 L256 248 L124 180 Z" fill="#ffffff"/>
+    <path d="M124 180 L256 248 L256 400 L124 332 Z" fill="#ccfbf1"/>
+    <path d="M388 180 L256 248 L256 400 L388 332 Z" fill="#99f6e4"/>
+  </g>
+  <!-- cinta de la caja -->
+  <path d="M190 146 L322 214 L322 262 L190 194 Z" fill="#0f766e" opacity=".22"/>
+  <!-- palomita de "en existencia" -->
+  <circle cx="372" cy="364" r="68" fill="#ffffff"/>
+  <circle cx="372" cy="364" r="54" fill="#0f766e"/>
+  <path d="M347 365 L366 384 L399 346" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

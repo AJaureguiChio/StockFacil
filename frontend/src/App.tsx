@@ -14,8 +14,8 @@ function Marco() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <header className="border-b border-border px-4 py-3">
-        <Link to="/" className="text-lg font-bold tracking-tight">
-          <img src="/stockfacil-logo.svg" alt="" className="h-7 w-7">
+        <Link to="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
+          <img src="/stockfacil-logo.svg" alt="" className="h-7 w-7" />
           Stock Facil
         </Link>
       </header>
